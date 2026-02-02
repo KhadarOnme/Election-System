@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somalia Election System</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <input type="checkbox" id="themeToggleCheckbox" hidden>
+    <div class="container">
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <h1>Somalia Election System</h1>
+                <nav style="display: flex; gap: 20px;">
+                    <a href="home.html" style="color: var(--text-secondary); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.3s ease;">Home</a>
+                    <a href="index.html" style="color: var(--accent-primary); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; background: var(--card-bg); border: 1px solid var(--border-color);">Vote</a>
+                    <a href="about.html" style="color: var(--text-secondary); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.3s ease;">About</a>
+                </nav>
+            </div>
+            <label for="themeToggleCheckbox" class="theme-toggle" title="Toggle theme">
+                <span class="sun">☀️</span>
+                <span class="moon">🌙</span>
+            </label>
+        </div>
+        <form id="registrationForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+
+            <label>Gender:</label>
+            <div class="gender">
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+            </div>
+
+            <label for="phone">Phone Number (starts with 25261):</label>
+            <input type="text" id="phone" required>
+
+            <label for="district">District:</label>
+            <select id="district" required>
+                <option value="">Select District</option>
+                <option value="Awdal">Awdal</option>
+                <option value="Bakool">Bakool</option>
+                <option value="Banaadir">Banaadir</option>
+                <option value="Bari">Bari</option>
+                <option value="Bay">Bay</option>
+                <option value="Galguduud">Galguduud</option>
+                <option value="Gedo">Gedo</option>
+                <option value="Hiiraan">Hiiraan</option>
+                <option value="Jubbada Dhexe">Jubbada Dhexe</option>
+                <option value="Jubbada Hoose">Jubbada Hoose</option>
+                <option value="Mudug">Mudug</option>
+                <option value="Nugaal">Nugaal</option>
+                <option value="Sanaag">Sanaag</option>
+                <option value="Shabeellaha Dhexe">Shabeellaha Dhexe</option>
+                <option value="Shabeellaha Hoose">Shabeellaha Hoose</option>
+                <option value="Sool">Sool</option>
+                <option value="Togdheer">Togdheer</option>
+                <option value="Woqooyi Galbeed">Woqooyi Galbeed</option>
+            </select>
+
+            <button type="submit">Register Voter</button>
+        </form>
+
+        <div id="voters">
+            <h2>Registered Voters</h2>
+            <ul id="votersList"></ul>
+            <button id="startVoting">Start Voting Phase</button>
+        </div>
+
+        <div id="loginSection" style="display: none;">
+            <h2>Login to Vote</h2>
+            <form id="loginForm">
+                <label for="loginPhone">Enter your phone number:</label>
+                <input type="text" id="loginPhone" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="votingSection" style="display: none;">
+            <h2>Vote for a Candidate</h2>
+            <form id="voteForm">
+                <div class="candidates">
+                    <div class="candidate-card">
+                        <img src="images.jpg" alt="Hassan Sheekh Mohamuud" class="candidate-photo">
+                        <label><input type="radio" name="candidate" value="Hassan Sheekh Mohamuud" required> Hassan Sheekh Mohamuud</label>
+                    </div>
+                    <div class="candidate-card">
+                        <img src="Farmaajo-1.jpg" alt="Mohamed Abdullaahi Farmaajo" class="candidate-photo">
+                        <label><input type="radio" name="candidate" value="Mohamed Abdullaahi Farmaajo" required> Mohamed Abdullaahi Farmaajo</label>
+                    </div>
+                    <div class="candidate-card">
+                        <img src="Rooble-2.webp" alt="Mohamed Hussein Rooble" class="candidate-photo">
+                        <label><input type="radio" name="candidate" value="Mohamed Hussein Rooble" required> Mohamed Hussein Rooble</label>
+                    </div>
+                    <div class="candidate-card">
+                        <img src="images (1).jpg" alt="Sheekh Shariif Sheekh Ahmed" class="candidate-photo">
+                        <label><input type="radio" name="candidate" value="Sheekh Shariif Sheekh Ahmed" required> Sheekh Shariif Sheekh Ahmed</label>
+                    </div>
+                </div>
+                <button type="button" id="voteButton">Submit Vote</button>
+            </form>
+        </div>
+
+        <div id="resultsSection" style="display: none;">
+            <h2>Election Results</h2>
+            <ul id="resultsList"></ul>
+        </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
